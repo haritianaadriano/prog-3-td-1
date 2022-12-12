@@ -15,4 +15,6 @@ public class AuthorService {
     public List<AuthorEntity> getAllAuthor(){
         return repository.findAll();
     }
+
+    public List<AuthorEntity> createAuthor(List<>)
 }
