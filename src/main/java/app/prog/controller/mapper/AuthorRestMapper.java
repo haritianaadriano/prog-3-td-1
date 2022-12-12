@@ -1,8 +1,6 @@
 package app.prog.controller.mapper;
 
-import app.prog.controller.response.AuthorResponse;
-import app.prog.controller.response.BookResponse;
-import app.prog.controller.response.CreateAuthorResponse;
+import app.prog.controller.response.*;
 import app.prog.model.AuthorEntity;
 import app.prog.model.BookEntity;
 
@@ -17,6 +15,14 @@ public class AuthorRestMapper {
     }
     public AuthorEntity toDomain(CreateAuthorResponse rest){
         return AuthorEntity.builder()
+                .name(rest.getName())
+                .particularity(rest.getParticularity())
+                .birthDate(rest.getBirthdate())
+                .build();
+    }
+    public AuthorEntity toDomain(UpdateAuthorResponse rest){
+        return AuthorEntity.builder()
+                .id(rest.getId())
                 .name(rest.getName())
                 .particularity(rest.getParticularity())
                 .birthDate(rest.getBirthdate())
