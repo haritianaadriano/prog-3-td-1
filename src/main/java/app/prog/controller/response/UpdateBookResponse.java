@@ -1,5 +1,6 @@
 package app.prog.controller.response;
 
+import app.prog.model.AuthorEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,6 @@ import lombok.Data;
 @Builder
 public class UpdateBookResponse {
     private int id;
-    private String author;
+    private AuthorEntity author;
     private String title;
 }

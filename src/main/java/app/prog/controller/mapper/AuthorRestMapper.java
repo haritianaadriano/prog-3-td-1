@@ -1,6 +1,8 @@
 package app.prog.controller.mapper;
 
-import app.prog.controller.response.*;
+import app.prog.controller.response.AuthorResponse;
+import app.prog.controller.response.CreateAuthorResponse;
+import app.prog.controller.response.UpdateAuthorResponse;
 import app.prog.model.AuthorEntity;
 import org.springframework.stereotype.Component;
 

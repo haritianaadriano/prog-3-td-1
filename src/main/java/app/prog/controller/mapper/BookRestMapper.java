@@ -4,10 +4,12 @@ import app.prog.controller.response.BookResponse;
 import app.prog.controller.response.CreateBookResponse;
 import app.prog.controller.response.UpdateBookResponse;
 import app.prog.model.BookEntity;
+import app.prog.repository.AuthorRepository;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BookRestMapper {
+    private AuthorRepository repository;
     public BookResponse toRest(BookEntity domain) {
         return BookResponse.builder()
                 .id(domain.getId())
