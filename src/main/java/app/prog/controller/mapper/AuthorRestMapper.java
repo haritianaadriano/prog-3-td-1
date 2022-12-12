@@ -2,8 +2,9 @@ package app.prog.controller.mapper;
 
 import app.prog.controller.response.*;
 import app.prog.model.AuthorEntity;
-import app.prog.model.BookEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AuthorRestMapper {
     public AuthorResponse toRest(AuthorEntity domain) {
         return AuthorResponse.builder()

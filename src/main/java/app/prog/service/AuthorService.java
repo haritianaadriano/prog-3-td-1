@@ -1,8 +1,6 @@
 package app.prog.service;
 
-import app.prog.controller.response.AuthorResponse;
 import app.prog.model.AuthorEntity;
-import app.prog.model.BookEntity;
 import app.prog.repository.AuthorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -45,5 +45,4 @@ public class AuthorController {
     public ResponseEntity<AuthorEntity> deleteAuthor(@PathVariable(name = "author_id")int authorId){
         return service.deleteAuthor(authorId);
     }
-
 }
