@@ -27,6 +27,9 @@ public class AuthorController {
     @PostMapping("/authors")
     public List<AuthorResponse> createAuthor(List<CreateAuthorResponse> newAuthors){
         List<AuthorEntity> thisAuthor = newAuthors.stream()
-                .map(mapper::)
+                .map(mapper::toDomain).toList();
+        return service.createAuthor(thisAuthor).stream()
+                .map(mapper::toRest).toList();
     }
+
 }
