@@ -8,6 +8,7 @@ import app.prog.controller.response.UpdateBookResponse;
 import app.prog.model.AuthorEntity;
 import app.prog.service.AuthorService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,6 +39,11 @@ public class AuthorController {
                 .map(mapper::toDomain).toList();
         return service.updateAuthor(thisAuthor).stream()
                 .map(mapper::toRest).toList();
+    }
+
+    @DeleteMapping("/authors/{author_id}")
+    public ResponseEntity<AuthorEntity> deleteAuthor(@PathVariable(name = "author_id")int authorId){
+        return service.deleteAuthor(authorId);
     }
 
 }
