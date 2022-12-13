@@ -3,6 +3,7 @@ package app.prog.service;
 import app.prog.model.AuthorEntity;
 import app.prog.repository.AuthorRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class AuthorService {
     private AuthorRepository repository;
 
     public List<AuthorEntity> getAllAuthor(){
-        return repository.findAll();
+        return repository.findAll(Sort.by("birth_date"));
     }
 
     public List<AuthorEntity> createAuthor(List<AuthorEntity> toCreate){
