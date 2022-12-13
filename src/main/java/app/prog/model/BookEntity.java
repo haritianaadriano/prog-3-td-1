@@ -20,13 +20,19 @@ public class BookEntity {
     private int id;
     private String title;
     @ManyToOne
-    @JoinColumn(name = "author")
+    @JoinColumn(name = "author_id")
     private AuthorEntity author;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
     private Integer pageNumber;
     private LocalDate releaseDate;
 
     public boolean hasAuthor() {
         return author != null;
+    }
+    public boolean hasCategory(){
+        return category != null;
     }
 
 }
