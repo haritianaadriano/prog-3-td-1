@@ -6,7 +6,6 @@ import app.prog.controller.response.UpdateBookResponse;
 import app.prog.model.AuthorEntity;
 import app.prog.model.BookEntity;
 import app.prog.repository.AuthorRepository;
-import app.prog.repository.BookRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +16,7 @@ public class BookRestMapper {
                 .id(domain.getId())
                 .title(domain.getTitle())
                 .categories(domain.getCategories())
-                .author(domain.getAuthor().getName() == null ? null : domain.getAuthor().getName())
+                .author(domain.getAuthor() == null ? null : domain.getAuthor().getName())
                 .hasAuthor(domain.hasAuthor())
                 .build();
     }
