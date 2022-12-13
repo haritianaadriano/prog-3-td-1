@@ -4,7 +4,6 @@ import app.prog.controller.response.BookResponse;
 import app.prog.controller.response.CreateBookResponse;
 import app.prog.controller.response.UpdateBookResponse;
 import app.prog.model.BookEntity;
-import app.prog.repository.AuthorRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,6 +22,7 @@ public class BookRestMapper {
         return BookEntity.builder()
                 .author(rest.getAuthor())
                 .title(rest.getTitle())
+                .categories(rest.getCategories())
                 .pageNumber(0) //Constraint not null in database, default value is 0
                 .build();
     }

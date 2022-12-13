@@ -30,10 +30,10 @@ public class BookEntity {
     private int id;
     private String title;
     @ManyToOne
-    @JoinColumn(name = "author")
+    @JoinColumn(name = "author_id")
     private AuthorEntity author;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private List<CategoryEntity> categories;
 
