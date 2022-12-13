@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @Builder
 public class CreateBookResponse {
-    private AuthorEntity author;
+    private String author;
     private List<CategoryEntity> categories;
     private String title;
 }
