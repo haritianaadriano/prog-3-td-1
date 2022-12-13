@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BookRestMapper {
-    private AuthorRepository repository;
     public BookResponse toRest(BookEntity domain) {
         return BookResponse.builder()
                 .id(domain.getId())
                 .title(domain.getTitle())
-                .author(domain.getAuthor())
+                .categories(domain.getCategories())
+                .author(domain.getAuthor().getName())
                 .hasAuthor(domain.hasAuthor())
                 .build();
     }
